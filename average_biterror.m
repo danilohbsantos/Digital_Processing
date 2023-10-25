@@ -10,7 +10,7 @@ function avg = average_biterror()
 
     % Calculates AVG of bit error
     avg = 0;
-    for i = 0:n
+    for i = 1:n
         avg = avg + i*[nchoosek(n, i) * pe^i * (1 - pe)^(n - i)];
     end
     % Displays the result
