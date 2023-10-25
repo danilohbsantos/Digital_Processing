@@ -1,0 +1,24 @@
+function bin=binario(dec)
+  dec=reshape(dec',64,[])';
+  k=1;
+  for(j=1:size(dec,1))
+      for(i=1:size(dec,2))
+        if(dec(j,i)>0)
+          bin(k,:)=dec(j,i);
+          k=k+1;
+        elseif(dec(j,i)<0)
+          bin(k,:)=256+dec(j,i);
+          k=k+1;
+        elseif(~sum(abs(dec(j,i:end))))
+          bin(k,:)=256;
+          k=k+1;
+        break
+        else
+          bin(k,:)=dec(j,i);
+          k=k+1;
+        end
+      end
+  end
+  bin=dec2bin(bin,9);
+  bin=reshape(bin',1,[]);
+end  
