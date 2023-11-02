@@ -1,4 +1,4 @@
-function vbin=codificador(im,H,V)
+function v2=codificador(im,H,V)
 
     %RGB->YCbCr
     R = im(:,:,1); %separa o canal R na matriz R
@@ -108,8 +108,9 @@ function vbin=codificador(im,H,V)
     Crzz2=ZigZag(Crzz);
     v2=[Yzz2 Cbzz2 Crzz2];
     v2=reshape(v2',[],1)';
+    v2=reshape(v2',64,[])';
     
     %Conversão Decimal-Binário
-    vbin=binario(v2);
+    %vbin=binario(v2);
 
 end

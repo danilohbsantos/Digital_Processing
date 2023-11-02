@@ -8,7 +8,8 @@ H = size(im,2)-rem(size(im,2),8); %encontra o número de colunas da matriz
 V = size(im,1)-rem(size(im,1),8); %encontra o número de linhas da matriz
 im=im(1:V,1:H,:);
 
-vbin=codificador(im,H,V);
+v=codificador(im,H,V);
+vbin=codificadorcomp(v);
 save('arquivo.fei','vbin','-mat','-nocompression');
 bin=load('arquivo.fei','-mat').vbin;
 imfinal=decodificador(bin,H,V);
