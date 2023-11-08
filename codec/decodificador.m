@@ -19,8 +19,8 @@ function imfinal=decodificador(bin,H,V)
     
     S=1;
     %matriz de quantização para canais de luminância.
-    Qy=[16 11 10 16 24 40 51 61; 
-     12 12 14 19 26 58 60 55; 
+    Qy=[16 11 10 16 24 40 51 61;
+     12 12 14 19 26 58 60 55;
      14 13 16 24 40 57 69 56; 
      14 17 22 29 51 87 80 62; 
      18 22 37 56 68 109 103 77; 
