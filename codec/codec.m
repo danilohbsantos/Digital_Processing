@@ -12,10 +12,16 @@ v=codificador(im,H,V);
 vbin=codificadorcomp(v);
 save('arquivo.fei','vbin','-mat','-nocompression');
 bin=load('arquivo.fei','-mat').vbin;
-imfinal=decodificador(bin,H,V);
+vdecod=decodificadorcomp(bin);
+imfinal=decodificador(vdecod,H,V);
 image(uint8(im))%mostra a imagem original
 title('Imagem Original')
 figure 
 image(uint8(imfinal))%exibe a imagem após os processos inversos
 title('Imagem Reconstruída')
 toc
+
+
+tamcomp=size(vbin,2)
+tamoriginal=H*V*3*8
+eff=100-[(tamcomp/tamoriginal)*100]

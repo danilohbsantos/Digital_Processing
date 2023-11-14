@@ -37,4 +37,6 @@ function vetbin=codificadorcomp(v)
     end
     vetbin=strcat(vetbin{:,1});
     vetbin=vetbin{1,1};
+%   vetbin=cat(2, vetbin{:});
+%   vetbin=horzcat(vetbin{:});
 end

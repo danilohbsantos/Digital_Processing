@@ -1,8 +1,8 @@
-function imfinal=decodificador(bin,H,V)
+function imfinal=decodificador(v,H,V)
 
     %Conversão Binário-Decimal
-    v=decimal(bin);
-    
+    %v=decimal(bin);
+    v=reshape(v',1,[]);
     v=reshape(v',192,[])';
     
     %ZigZag inverso

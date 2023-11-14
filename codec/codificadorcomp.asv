@@ -17,10 +17,10 @@ function vetbin=codificadorcomp(v)
             elseif y==0;
                 z=z+1;
                 if z==16
-                    vetbin{a,1}=x;
-                a=a+1;
-                z=0;
-
+                    vetbin{a,1}=RLE(1,16);
+                    a=a+1;
+                    z=0;
+                end
             else
                 C=size(dec2bin(abs(y)),2); %define C
                 if y<0
@@ -34,7 +34,8 @@ function vetbin=codificadorcomp(v)
                 z=0;
             end
         end
-        j
     end
     vetbin=strcat(vetbin{:,1});
+%   vetbin=vetbin{:,1};
+    vetbin=vetbin{1,1};
 end
